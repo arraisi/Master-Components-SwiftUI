@@ -17,10 +17,13 @@
 		C012B1A4253EC696000ADE6B /* LazyHStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C012B1A3253EC696000ADE6B /* LazyHStackView.swift */; };
 		C012B1A7253EC857000ADE6B /* TabViewDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C012B1A6253EC857000ADE6B /* TabViewDemo.swift */; };
 		C040754825413AB30070AF74 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = C040754725413AB30070AF74 /* Card.swift */; };
+		C065A46425512E0A003B6C6A /* InfiniteCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C065A46325512E0A003B6C6A /* InfiniteCarousel.swift */; };
 		C075591B253422D10067AF7E /* MasterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C075591A253422D10067AF7E /* MasterModel.swift */; };
 		C07559272534235E0067AF7E /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07559262534235E0067AF7E /* Data.swift */; };
 		C075592F253424200067AF7E /* masterData.json in Resources */ = {isa = PBXBuildFile; fileRef = C075592E253424200067AF7E /* masterData.json */; };
 		C07559322534243D0067AF7E /* RadioButtonGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07559312534243D0067AF7E /* RadioButtonGroup.swift */; };
+		C09A313225520E5C00167FE7 /* CarousellOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09A313125520E5C00167FE7 /* CarousellOffset.swift */; };
+		C09A3135255210B100167FE7 /* Kartuku.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09A3134255210B100167FE7 /* Kartuku.swift */; };
 		C0BC4FF4253E95BB003206B8 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BC4FF3253E95BB003206B8 /* CollectionView.swift */; };
 		C0BC4FF7253E9717003206B8 /* CollectionCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BC4FF6253E9717003206B8 /* CollectionCellView.swift */; };
 		C0BC4FFA253E9801003206B8 /* ATM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BC4FF9253E9801003206B8 /* ATM.swift */; };
@@ -41,10 +44,13 @@
 		C012B1A3253EC696000ADE6B /* LazyHStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyHStackView.swift; sourceTree = "<group>"; };
 		C012B1A6253EC857000ADE6B /* TabViewDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewDemo.swift; sourceTree = "<group>"; };
 		C040754725413AB30070AF74 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		C065A46325512E0A003B6C6A /* InfiniteCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfiniteCarousel.swift; sourceTree = "<group>"; };
 		C075591A253422D10067AF7E /* MasterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterModel.swift; sourceTree = "<group>"; };
 		C07559262534235E0067AF7E /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		C075592E253424200067AF7E /* masterData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = masterData.json; path = MasterComponentsSwiftUI/Resource/masterData.json; sourceTree = SOURCE_ROOT; };
 		C07559312534243D0067AF7E /* RadioButtonGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonGroup.swift; sourceTree = "<group>"; };
+		C09A313125520E5C00167FE7 /* CarousellOffset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarousellOffset.swift; sourceTree = "<group>"; };
+		C09A3134255210B100167FE7 /* Kartuku.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kartuku.swift; sourceTree = "<group>"; };
 		C0BC4FF3253E95BB003206B8 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
 		C0BC4FF6253E9717003206B8 /* CollectionCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCellView.swift; sourceTree = "<group>"; };
 		C0BC4FF9253E9801003206B8 /* ATM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATM.swift; sourceTree = "<group>"; };
@@ -115,6 +121,9 @@
 				C012B1A3253EC696000ADE6B /* LazyHStackView.swift */,
 				C012B1A6253EC857000ADE6B /* TabViewDemo.swift */,
 				C0E787C4254122AD00E30389 /* CarouselList.swift */,
+				C065A46325512E0A003B6C6A /* InfiniteCarousel.swift */,
+				C09A313125520E5C00167FE7 /* CarousellOffset.swift */,
+				C09A3134255210B100167FE7 /* Kartuku.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -214,8 +223,11 @@
 				C012B1A7253EC857000ADE6B /* TabViewDemo.swift in Sources */,
 				C07559272534235E0067AF7E /* Data.swift in Sources */,
 				C00B5327253403BF00141070 /* SceneDelegate.swift in Sources */,
+				C065A46425512E0A003B6C6A /* InfiniteCarousel.swift in Sources */,
+				C09A313225520E5C00167FE7 /* CarousellOffset.swift in Sources */,
 				C07559322534243D0067AF7E /* RadioButtonGroup.swift in Sources */,
 				C075591B253422D10067AF7E /* MasterModel.swift in Sources */,
+				C09A3135255210B100167FE7 /* Kartuku.swift in Sources */,
 				C040754825413AB30070AF74 /* Card.swift in Sources */,
 				C00B533B253403E200141070 /* CheckBoxGroup.swift in Sources */,
 				C0BC4FF4253E95BB003206B8 /* CollectionView.swift in Sources */,

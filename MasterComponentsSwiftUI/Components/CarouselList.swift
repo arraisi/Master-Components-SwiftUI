@@ -25,16 +25,14 @@ struct Home : View {
     @State var count : CGFloat = 0
     @State var screen = UIScreen.main.bounds.width - 30
     @State var op : CGFloat = 0
+    @State var translationWidth : CGFloat = 0
     
     @State var data = [
         
-        Card(id: 0, img: "p1", name: "Jill", show: false),
-        Card(id: 1, img: "p2", name: "Emma", show: false),
-        Card(id: 2, img: "p3", name: "Catherine", show: false),
-        Card(id: 3, img: "p4", name: "iJustine", show: false),
-        Card(id: 4, img: "p5", name: "Juliana", show: false),
-        Card(id: 5, img: "p6", name: "Lilly", show: false),
-        Card(id: 6, img: "p7", name: "Emily", show: false)
+        Card(id: 0, img: "atm_diamond", name: "Diamond", show: false),
+        Card(id: 1, img: "atm_pearl", name: "Pearl", show: false),
+        Card(id: 2, img: "atm_bromo", name: "Bromo", show: false),
+        Card(id: 3, img: "atm_brmo", name: "Bromo", show: false)
         
     ]
     
@@ -43,6 +41,11 @@ struct Home : View {
         NavigationView{
             
             VStack{
+                Text("x: \(x)")
+                Text("count: \(count)")
+                Text("screen: \(screen)")
+                Text("op: \(op)")
+                Text("transalation: \(translationWidth)")
                 
                 Spacer()
                 
@@ -52,52 +55,54 @@ struct Home : View {
                         
                         CardView(data: i)
                             .offset(x: self.x)
-                            .highPriorityGesture(DragGesture()
-                                                    
-                                                    .onChanged({ (value) in
-                                                        
-                                                        if value.translation.width > 0{
-                                                            
-                                                            self.x = value.location.x
-                                                        }
-                                                        else{
-                                                            
-                                                            self.x = value.location.x - self.screen
-                                                        }
-                                                        
-                                                    })
-                                                    .onEnded({ (value) in
-                                                        
-                                                        if value.translation.width > 0{
-                                                            
-                                                            
-                                                            if value.translation.width > ((self.screen - 80) / 2) && Int(self.count) != 0{
-                                                                
-                                                                
-                                                                self.count -= 1
-                                                                self.updateHeight(value: Int(self.count))
-                                                                self.x = -((self.screen + 15) * self.count)
-                                                            }
-                                                            else{
-                                                                
-                                                                self.x = -((self.screen + 15) * self.count)
-                                                            }
-                                                        }
-                                                        else{
-                                                            
-                                                            
-                                                            if -value.translation.width > ((self.screen - 80) / 2) && Int(self.count) !=  (self.data.count - 1){
-                                                                
-                                                                self.count += 1
-                                                                self.updateHeight(value: Int(self.count))
-                                                                self.x = -((self.screen + 15) * self.count)
-                                                            }
-                                                            else{
-                                                                
-                                                                self.x = -((self.screen + 15) * self.count)
-                                                            }
-                                                        }
-                                                    })
+                            .highPriorityGesture(
+                                
+                                DragGesture()
+                                    .onChanged({ (value) in
+                                        self.translationWidth = value.translation.width
+                                        
+                                        if value.translation.width > 0 {
+                                            print("slide right")
+                                            self.x = value.location.x
+                                        }
+                                        else{
+                                            
+                                            print("slide left")
+                                            self.x = value.location.x - self.screen
+                                        }
+                                        
+                                    })
+                                    .onEnded({ (value) in
+                                        self.translationWidth = value.translation.width
+                                        
+                                        if value.translation.width > 0 {
+                                            
+                                            if value.translation.width > ((self.screen - 80) / 2) && Int(self.count) != 0 {
+                                                
+                                                self.count -= 1
+                                                self.updateHeight(value: Int(self.count))
+                                                self.x = -((self.screen + 15) * self.count)
+                                            }
+                                            else{
+                                                self.x = -((self.screen + 15) * self.count)
+                                            }
+                                            
+                                        }
+                                        else{
+                                            
+                                            if -value.translation.width > ((self.screen - 80) / 2) && Int(self.count) !=  (self.data.count - 1){
+                                                
+                                                self.count += 1
+                                                self.updateHeight(value: Int(self.count))
+                                                self.x = -((self.screen + 15) * self.count)
+                                            }
+                                            else{
+                                                
+                                                self.x = -((self.screen + 15) * self.count)
+                                            }
+                                            
+                                        }
+                                    })
                             )
                     }
                 }
@@ -140,14 +145,10 @@ struct CardView : View {
             
             Image(data.img)
                 .resizable()
-            
-            Text(data.name)
-                .fontWeight(.bold)
-                .padding(.vertical, 13)
-                .padding(.leading)
+                .aspectRatio(contentMode: .fill)
             
         }
-        .frame(width: UIScreen.main.bounds.width - 30, height: data.show ? 500 : 440)
+        .frame(width: UIScreen.main.bounds.width - 30, height: data.show == true ? 210:195)
         .background(Color.white)
         .cornerRadius(25)
     }
